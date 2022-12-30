@@ -1,9 +1,8 @@
 import 'dart:math';
-
-import 'package:expenses/components/transaction_form.dart';
-import 'package:expenses/components/transaction_list.dart';
 import 'package:flutter/material.dart';
 
+import '../components/transaction_form.dart';
+import '../components/transaction_list.dart';
 import '../models/Transaction.dart';
 
 class TransactionUser extends StatefulWidget {

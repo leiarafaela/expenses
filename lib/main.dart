@@ -1,5 +1,6 @@
-import 'package:expenses/components/transaction_user.dart';
 import 'package:flutter/material.dart';
+
+import '../components/transaction_user.dart';
 
 void main() {
   runApp(const ExpensesApp());
