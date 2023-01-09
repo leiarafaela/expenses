@@ -35,7 +35,7 @@ class Chart extends StatelessWidget {
           'value': totalSum,
         };
       },
-    );
+    ).reversed.toList();
   }
 
   double get _weekTotalValue {
@@ -51,7 +51,7 @@ class Chart extends StatelessWidget {
       elevation: 6,
       margin: const EdgeInsets.all(20),
       child: Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.only(top: 10.0, bottom: 10),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: groupedTransactions.map((tr) {
