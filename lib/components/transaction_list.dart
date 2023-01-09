@@ -7,9 +7,11 @@ class TransactionList extends StatelessWidget {
   const TransactionList({
     super.key,
     required this.transactions,
+    required this.onRemove,
   });
 
   final List<Transaction> transactions;
+  final void Function(String) onRemove;
 
   @override
   Widget build(BuildContext context) {
@@ -42,30 +44,31 @@ class TransactionList extends StatelessWidget {
                     horizontal: 5,
                   ),
                   child: ListTile(
-                    leading: CircleAvatar(
-                      backgroundColor: Theme.of(context).colorScheme.primary,
-                      radius: 30,
-                      child: Padding(
-                        padding: const EdgeInsets.all(6.0),
-                        child: FittedBox(
-                          child: Text(
-                            'R\$${tr.value}',
-                            style: Theme.of(context).textTheme.headline1,
+                      leading: CircleAvatar(
+                        backgroundColor: Theme.of(context).colorScheme.primary,
+                        radius: 30,
+                        child: Padding(
+                          padding: const EdgeInsets.all(6.0),
+                          child: FittedBox(
+                            child: Text(
+                              'R\$${tr.value}',
+                              style: Theme.of(context).textTheme.headline1,
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                    title: Text(
-                      tr.title,
-                      style: Theme.of(context).textTheme.headline6,
-                    ),
-                    subtitle: Text(
-                      DateFormat('dd MMM y').format(tr.date),
-                    ),
-                    trailing: const Icon(
-                      Icons.delete,
-                    ),
-                  ),
+                      title: Text(
+                        tr.title,
+                        style: Theme.of(context).textTheme.headline6,
+                      ),
+                      subtitle: Text(
+                        DateFormat('dd MMM y').format(tr.date),
+                      ),
+                      trailing: IconButton(
+                        icon: const Icon(Icons.delete),
+                        onPressed: () => onRemove(tr.id),
+                        color: Theme.of(context).errorColor,
+                      )),
                 );
               },
             ),
