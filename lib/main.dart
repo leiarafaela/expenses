@@ -23,9 +23,13 @@ class ExpensesApp extends StatelessWidget {
       theme: theme.copyWith(
         colorScheme: theme.colorScheme.copyWith(
           primary: Colors.purple,
-          secondary: Colors.amber,
+          secondary: Colors.purple[200],
         ),
         textTheme: theme.textTheme.copyWith(
+          headline1: const TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
           headline6: const TextStyle(
             fontFamily: 'OpenSans',
             fontSize: 16,
@@ -55,6 +59,12 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final List<Transaction> _transactions = [
     Transaction(
+      't0',
+      title: 'Cartão de crédito',
+      value: 2000.00,
+      date: DateTime.now().subtract(const Duration(days: 1)),
+    ),
+    Transaction(
       't1',
       title: 'Conta de Luz',
       value: 120.20,
@@ -65,6 +75,24 @@ class _HomePageState extends State<HomePage> {
       title: 'Jaqueta',
       value: 150.00,
       date: DateTime.now().subtract(const Duration(days: 2)),
+    ),
+    Transaction(
+      't3',
+      title: 'Internet',
+      value: 120.00,
+      date: DateTime.now(),
+    ),
+    Transaction(
+      't4',
+      title: 'Lanche',
+      value: 55.00,
+      date: DateTime.now().subtract(const Duration(days: 1)),
+    ),
+    Transaction(
+      't5',
+      title: 'Tenis',
+      value: 250.00,
+      date: DateTime.now().subtract(const Duration(days: 1)),
     ),
   ];
 
