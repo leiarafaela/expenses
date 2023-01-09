@@ -1,0 +1,9 @@
+- Arrumar o ThemeData, talvez criar um Provider
+- Mostrar o valor total de gastos da semana ou mensal
+- Adicionar adição de expense
+- Alterar exclusão, arrastar pro lado e aparecer lixeira
+- alterar a forma como o preço aparece, tirar o CircleAvatar
+- Converter datas para portugues
+- Integrar ao Firebase
+- Add Login
+- Alterar Layouts de tudo
