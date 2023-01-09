@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-import '../models/Transaction.dart';
+import '../models/transaction.dart';
 
 class TransactionList extends StatelessWidget {
   const TransactionList({
@@ -38,11 +38,9 @@ class TransactionList extends StatelessWidget {
               itemBuilder: (context, index) {
                 final tr = transactions[index];
                 return Card(
-                  elevation: 5,
-                  margin: const EdgeInsets.symmetric(
-                    vertical: 8,
-                    horizontal: 5,
-                  ),
+                  elevation: 0,
+                  margin:
+                      const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
                   child: ListTile(
                       leading: CircleAvatar(
                         backgroundColor: Theme.of(context).colorScheme.primary,

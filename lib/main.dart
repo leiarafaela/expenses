@@ -1,10 +1,10 @@
-import 'package:expenses/components/chart.dart';
 import 'package:flutter/material.dart';
 import 'dart:math';
 
+import '/components/chart.dart';
 import 'components/transaction_form.dart';
 import 'components/transaction_list.dart';
-import 'models/Transaction.dart';
+import 'models/transaction.dart';
 
 void main() {
   runApp(const ExpensesApp());
@@ -22,8 +22,8 @@ class ExpensesApp extends StatelessWidget {
       home: HomePage(),
       theme: theme.copyWith(
         colorScheme: theme.colorScheme.copyWith(
-          primary: Colors.purple,
-          secondary: Colors.purple[200],
+          primary: Color.fromARGB(255, 33, 194, 113),
+          secondary: Color.fromARGB(255, 9, 95, 55),
         ),
         textTheme: theme.textTheme.copyWith(
           headline1: const TextStyle(
@@ -37,6 +37,8 @@ class ExpensesApp extends StatelessWidget {
             color: Colors.black,
           ),
         ),
+        scaffoldBackgroundColor: Colors.grey[200],
+        //cardColor: Colors.grey[200],
         appBarTheme: const AppBarTheme(
           titleTextStyle: TextStyle(
             fontFamily: 'OpenSans',
@@ -50,7 +52,7 @@ class ExpensesApp extends StatelessWidget {
 }
 
 class HomePage extends StatefulWidget {
-  HomePage({super.key});
+  const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -142,7 +144,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Center(child: Text('Despesas')),
+        title: const Center(child: Text('Minhas Despesas')),
         actions: [
           IconButton(
             onPressed: () => _openTransactionFormModal(context),
@@ -166,7 +168,7 @@ class _HomePageState extends State<HomePage> {
         child: const Icon(Icons.add),
         onPressed: () => _openTransactionFormModal(context),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      //floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }

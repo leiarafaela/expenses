@@ -11,4 +11,3 @@ class Transaction {
   final double value;
   final DateTime date;
 }
- 

@@ -1,7 +1,8 @@
-import 'package:expenses/components/chart_bar.dart';
-import 'package:expenses/models/Transaction.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+
+import '../components/chart_bar.dart';
+import '../models/transaction.dart';
 
 class Chart extends StatelessWidget {
   const Chart({
@@ -48,7 +49,7 @@ class Chart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: 6,
+      elevation: 0,
       margin: const EdgeInsets.all(20),
       child: Padding(
         padding: const EdgeInsets.only(top: 10.0, bottom: 10),
