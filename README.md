@@ -1,16 +1,12 @@
-# expenses
+<h1 align="center"> ExpensesApp </h1>
 
-A new Flutter project.
+<p> Application to control personal expenses. </p>
 
-## Getting Started
+<p align="center">
+<img src="http://img.shields.io/static/v1?label=v1.0.0&message=IN%20PROGRESS&color=GREEN&style=for-the-badge"/>
+</p>
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/92175580/211409764-f848beeb-43d1-42ab-b970-ec09066c4d0b.PNG" heigth="250" width="250">
+  <img src="https://user-images.githubusercontent.com/92175580/211409907-6dc0c531-d371-45a4-a525-df1c80688635.PNG" heigth="250" width="250">
+</p>
