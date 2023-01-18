@@ -14,47 +14,54 @@ class ChartBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        SizedBox(
-          height: 20,
-          child: Text(
-            value.toStringAsFixed(2),
-            style: const TextStyle(fontSize: 12),
-          ),
-        ),
-        const SizedBox(height: 5),
-        Container(
-          height: 60,
-          width: 10,
-          child: Stack(
-            alignment: Alignment.bottomCenter,
-            children: [
-              Container(
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    // TODO: ajustar com tema
-                    color: Colors.grey,
-                    width: 1.0,
+    return LayoutBuilder(
+      builder: (ctx, constraints) {
+        return Column(
+          children: [
+            SizedBox(
+              height: constraints.maxHeight * 0.15,
+              child: Text(
+                value.toStringAsFixed(2),
+                style: const TextStyle(fontSize: 12),
+              ),
+            ),
+            SizedBox(height: constraints.maxHeight * 0.05),
+            Container(
+              height: constraints.maxHeight * 0.6,
+              width: 10,
+              child: Stack(
+                alignment: Alignment.bottomCenter,
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        // TODO: ajustar com tema
+                        color: Colors.grey,
+                        width: 1.0,
+                      ),
+                      // TODO: ajustar com tema
+                      color: Colors.grey[200],
+                      borderRadius: BorderRadius.circular(2),
+                    ),
                   ),
-                  // TODO: ajustar com tema
-                  color: Colors.grey[200],
-                  borderRadius: BorderRadius.circular(2),
-                ),
+                  FractionallySizedBox(
+                    heightFactor: percentage,
+                    child: Container(
+                      decoration: BoxDecoration(
+                          color: Theme.of(context).colorScheme.primary),
+                    ),
+                  ),
+                ],
               ),
-              FractionallySizedBox(
-                heightFactor: percentage,
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: Theme.of(context).colorScheme.primary),
-                ),
-              ),
-            ],
-          ),
-        ),
-        const SizedBox(height: 5),
-        Text(label)
-      ],
+            ),
+            SizedBox(height: constraints.maxHeight * 0.05),
+            Container(
+              height: constraints.maxHeight * 0.15,
+              child: Text(label),
+            )
+          ],
+        );
+      },
     );
   }
 }

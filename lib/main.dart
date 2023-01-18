@@ -88,13 +88,25 @@ class _HomePageState extends State<HomePage> {
       't4',
       title: 'Lanche',
       value: 55.00,
-      date: DateTime.now().subtract(const Duration(days: 1)),
+      date: DateTime.now().subtract(const Duration(days: 4)),
     ),
     Transaction(
       't5',
       title: 'Tenis',
       value: 250.00,
-      date: DateTime.now().subtract(const Duration(days: 1)),
+      date: DateTime.now().subtract(const Duration(days: 4)),
+    ),
+    Transaction(
+      't6',
+      title: 'Cartão de Itau',
+      value: 2000.00,
+      date: DateTime.now().subtract(const Duration(days: 5)),
+    ),
+    Transaction(
+      't7',
+      title: 'Pizza',
+      value: 100.00,
+      date: DateTime.now().subtract(const Duration(days: 3)),
     ),
   ];
 
@@ -142,24 +154,37 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final statusBarHeight = MediaQuery.of(context).padding.top;
+    final appBar = AppBar(
+      title: const Center(child: Text('Minhas Despesas')),
+      actions: [
+        IconButton(
+          onPressed: () => _openTransactionFormModal(context),
+          icon: const Icon(Icons.add),
+        )
+      ],
+    );
+
+    final availableHeight = MediaQuery.of(context).size.height -
+        appBar.preferredSize.height -
+        statusBarHeight;
+
     return Scaffold(
-      appBar: AppBar(
-        title: const Center(child: Text('Minhas Despesas')),
-        actions: [
-          IconButton(
-            onPressed: () => _openTransactionFormModal(context),
-            icon: const Icon(Icons.add),
-          )
-        ],
-      ),
+      appBar: appBar,
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Chart(recentTransactions: _recentTransactions),
-            TransactionList(
-              transactions: _transactions,
-              onRemove: _removeTransaction,
+            Container(
+              height: availableHeight * 0.3,
+              child: Chart(recentTransactions: _recentTransactions),
+            ),
+            Container(
+              height: availableHeight * 0.7,
+              child: TransactionList(
+                transactions: _transactions,
+                onRemove: _removeTransaction,
+              ),
             ),
           ],
         ),
