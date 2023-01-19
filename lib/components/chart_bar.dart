@@ -19,15 +19,15 @@ class ChartBar extends StatelessWidget {
         return Column(
           children: [
             SizedBox(
-              height: constraints.maxHeight * 0.15,
+              height: constraints.maxHeight * 0.10,
               child: Text(
                 value.toStringAsFixed(2),
-                style: const TextStyle(fontSize: 12),
+                //style: const TextStyle(fontSize: 12),
               ),
             ),
-            SizedBox(height: constraints.maxHeight * 0.05),
+            SizedBox(height: constraints.maxHeight * 0.075),
             Container(
-              height: constraints.maxHeight * 0.6,
+              height: constraints.maxHeight * 0.65,
               width: 10,
               child: Stack(
                 alignment: Alignment.bottomCenter,
@@ -54,9 +54,9 @@ class ChartBar extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: constraints.maxHeight * 0.05),
+            SizedBox(height: constraints.maxHeight * 0.075),
             Container(
-              height: constraints.maxHeight * 0.15,
+              height: constraints.maxHeight * 0.10,
               child: Text(label),
             )
           ],

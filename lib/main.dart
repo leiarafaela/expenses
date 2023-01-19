@@ -176,11 +176,11 @@ class _HomePageState extends State<HomePage> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Container(
-              height: availableHeight * 0.3,
+              height: availableHeight * 0.30,
               child: Chart(recentTransactions: _recentTransactions),
             ),
             Container(
-              height: availableHeight * 0.7,
+              height: availableHeight * 0.70,
               child: TransactionList(
                 transactions: _transactions,
                 onRemove: _removeTransaction,
