@@ -58,52 +58,55 @@ class _TransactionFormState extends State<TransactionForm> {
       elevation: 5,
       child: Padding(
         padding: const EdgeInsets.all(10),
-        child: Column(children: [
-          TextField(
-            controller: _titleController,
-            onSubmitted: (_) => _submitForm(),
-            decoration: const InputDecoration(
-              labelText: 'Titulo',
+        child: Column(
+          children: [
+            TextField(
+              controller: _titleController,
+              onSubmitted: (_) => _submitForm(),
+              decoration: const InputDecoration(
+                labelText: 'Titulo',
+              ),
             ),
-          ),
-          TextField(
-            controller: _valueController,
-            keyboardType: const TextInputType.numberWithOptions(decimal: true),
-            onSubmitted: (_) => _submitForm(),
-            decoration: const InputDecoration(
-              labelText: 'Valor (R\$)',
+            TextField(
+              controller: _valueController,
+              keyboardType:
+                  const TextInputType.numberWithOptions(decimal: true),
+              onSubmitted: (_) => _submitForm(),
+              decoration: const InputDecoration(
+                labelText: 'Valor (R\$)',
+              ),
             ),
-          ),
-          SizedBox(
-            height: 70,
-            child: Row(
-              children: [
-                Expanded(
-                  child: Text(
-                    'Data selecionada: ${DateFormat('dd/MM/y').format(_selectedDate)}',
+            SizedBox(
+              height: 70,
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Text(
+                      'Data selecionada: ${DateFormat('dd/MM/y').format(_selectedDate)}',
+                    ),
                   ),
-                ),
-                TextButton(
-                  onPressed: _showDatePicker,
-                  child: const Text(
-                    'Alterar data',
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                  TextButton(
+                    onPressed: _showDatePicker,
+                    child: const Text(
+                      'Alterar data',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
                   ),
-                )
-              ],
+                ],
+              ),
             ),
-          ),
-          SizedBox(
-            width: 200,
-            height: 40,
-            child: ElevatedButton(
-              child: const Text('Salvar'),
-              onPressed: () {
-                _submitForm();
-              },
+            SizedBox(
+              width: 200,
+              height: 40,
+              child: ElevatedButton(
+                child: const Text('Salvar'),
+                onPressed: () {
+                  _submitForm();
+                },
+              ),
             ),
-          ),
-        ]),
+          ],
+        ),
       ),
     );
   }
